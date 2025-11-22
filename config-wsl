@@ -4185,3 +4185,70 @@ CONFIG_ARCH_USE_MEMTEST=y
 # CONFIG_HYPERV_TESTING is not set
 # end of Kernel Testing and Coverage
 # end of Kernel hacking
+
+# ============================================
+# Custom Performance Kernel Configuration
+# ============================================
+
+# Input device support (evdev for /dev/input)
+CONFIG_INPUT_EVDEV=y
+CONFIG_INPUT_MOUSEDEV=y
+CONFIG_INPUT_MOUSEDEV_PSAUX=y
+
+# ============================================
+# GPU/ML Support (CUDA/YOLO)
+# ============================================
+
+# DRM - CRITICAL: =y not =m for /dev/dri
+CONFIG_DRM=y
+CONFIG_DRM_VGEM=y
+CONFIG_DRM_KMS_HELPER=y
+CONFIG_DRM_TTM=y
+CONFIG_DRM_GEM_SHMEM_HELPER=y
+
+# Hyper-V GPU passthrough (dxgkrnl)
+CONFIG_HYPERV=y
+CONFIG_HYPERV_UTILS=y
+CONFIG_DXGKRNL=y
+
+# Graphics/Framebuffer
+CONFIG_FB=y
+CONFIG_FB_SIMPLE=y
+CONFIG_DRM_FBDEV_EMULATION=y
+
+# Video/Camera (for YOLO on streams)
+CONFIG_MEDIA_SUPPORT=y
+CONFIG_MEDIA_CAMERA_SUPPORT=y
+CONFIG_VIDEO_DEV=y
+CONFIG_VIDEO_V4L2=y
+CONFIG_V4L_PLATFORM_DRIVERS=y
+CONFIG_USB_VIDEO_CLASS=y
+CONFIG_USB_VIDEO_CLASS_INPUT_EVDEV=y
+
+# Compute acceleration
+CONFIG_DRM_COMPUTE=y
+CONFIG_DRM_ACCEL=y
+
+# Memory for large models
+CONFIG_TRANSPARENT_HUGEPAGE=y
+CONFIG_TRANSPARENT_HUGEPAGE_ALWAYS=y
+CONFIG_COMPACTION=y
+CONFIG_MIGRATION=y
+CONFIG_CMA=y
+CONFIG_CMA_AREAS=7
+
+# ============================================
+# Performance tuning
+# ============================================
+CONFIG_PREEMPT_VOLUNTARY=y
+CONFIG_HZ_300=y
+
+# ============================================
+# Remove bloat
+# ============================================
+# CONFIG_DOCKER is not set
+# CONFIG_VETH is not set
+# CONFIG_BRIDGE is not set
+# CONFIG_OVERLAY_FS is not set
+# CONFIG_AUFS_FS is not set
+
