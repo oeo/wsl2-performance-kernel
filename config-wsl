@@ -4244,13 +4244,14 @@ CONFIG_PREEMPT_VOLUNTARY=y
 CONFIG_HZ_300=y
 
 # ============================================
-# Remove bloat
+# Networking (REQUIRED for WSL2 - DO NOT DISABLE)
 # ============================================
+# WSL2 NAT networking requires these
+CONFIG_VETH=y
+CONFIG_BRIDGE=y
+
+# Can disable Docker container runtime (but keep networking)
 # CONFIG_DOCKER is not set
-# CONFIG_VETH is not set
-# CONFIG_BRIDGE is not set
-# CONFIG_OVERLAY_FS is not set
-# CONFIG_AUFS_FS is not set
 
 CONFIG_INPUT_EVDEV=y
 CONFIG_INPUT_MOUSEDEV=y
